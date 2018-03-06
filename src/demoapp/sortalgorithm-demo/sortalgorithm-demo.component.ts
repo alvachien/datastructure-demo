@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MergeSort, QuickSort, BubbleSort, InsertionSort, HeapSort, CountingSort } from '../../lib/model';
-import { MdSelectChange } from '@angular/material';
+import { MergeSort, QuickSort, BubbleSort, InsertionSort, HeapSort, CountingSort } from 'actslib';
+import { MatSelectChange } from '@angular/material';
 
 @Component({
   selector: 'app-sortalgorithm-demo',

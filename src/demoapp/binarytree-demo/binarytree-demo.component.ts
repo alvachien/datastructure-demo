@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BinaryTree, BinaryTreeNode } from '../../lib/model';
+import { BinaryTree, BinaryTreeNode } from 'actslib';
 
 @Component({
   selector: 'app-binarytree-demo',

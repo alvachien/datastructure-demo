@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as DSModel from '../../lib/model';
+import * as DSModel from 'actslib';
 
 @Component({
   moduleId: module.id,

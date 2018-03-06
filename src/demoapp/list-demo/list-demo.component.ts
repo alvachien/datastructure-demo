@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IListOperateData, ListOperateData } from './listoperatedata';
 import { ListOperateDatabase, ListOperateDataSource } from './listdatasource';
-import { SequenceList, LinkList } from '../../lib/model';
+import { SequenceList, LinkList } from 'actslib';
 
 @Component({
   selector: 'demoapp-list-demo',

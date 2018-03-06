@@ -10,7 +10,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { Polynomial } from '../../lib';
+import { Polynomial } from 'actslib';
 
 @Component({
   selector: 'demoapp-subject-demo',
