@@ -2,30 +2,29 @@
   <mat-toolbar color="primary">{{'Algorithm.SortingAlgorithm' | translate}} Demo</mat-toolbar>
   <mat-card-content>
     <mat-input-container class="demo-full-width">
-      <input mdInput type="number" required placeholder="Maximum numbers" [(ngModel)]="maxnumber" name="maxnbr">
+      <input matInput type="number" required placeholder="Maximum numbers" [(ngModel)]="maxnumber" name="maxnbr">
     </mat-input-container>
     <mat-input-container class="demo-full-width">
-      <textarea mdInput placeholder="Before Sort" readonly [value]="BeforeSort" name="bfsrt" rows="10"></textarea>
+      <textarea matInput placeholder="Before Sort" readonly [value]="BeforeSort" name="bfsrt" rows="10"></textarea>
     </mat-input-container>
-    <mat-select placeholder="{{'Algorithm.SortingAlgorithm' | translate}}" [(ngModel)]="currentAlgor" required
-       #algControl="ngModel">
+    <mat-select placeholder="{{'Algorithm.SortingAlgorithm' | translate}}" [(ngModel)]="currentAlgor" required #algControl="ngModel">
       <mat-option>None</mat-option>
       <mat-option *ngFor="let alg of algorithms" [value]="alg.value">
         {{ alg.viewValue }}
       </mat-option>
     </mat-select>
     <mat-input-container class="demo-full-width">
-      <input mdInput type="number" readonly placeholder="{{'Home.TimeSpent' | translate}}" [value]="tmeSpent" name="tmSpent">
+      <input matInput type="number" readonly placeholder="{{'Home.TimeSpent' | translate}}" [value]="tmeSpent" name="tmSpent">
     </mat-input-container>
     <p>
       <mat-input-container class="demo-full-width">
-        <textarea mdInput placeholder="Detail" readonly rows="10">{{AfterSort}}</textarea>
+        <textarea matInput placeholder="Detail" readonly rows="10">{{AfterSort}}</textarea>
       </mat-input-container>
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button md-button (click)="onGenerate()" [disabled]="maxnumber <= 1">GENERATE RADOMS</button>
-    <button md-button (click)="onSort()" [disabled]="arrayForSort.length <= 1">{{'Home.SortButton' | translate}}</button>
-    <button md-button>{{'Home.RESET' | translate}}</button>
+    <button mat-button (click)="onGenerate()" [disabled]="maxnumber <= 1">GENERATE RADOMS</button>
+    <button mat-button (click)="onSort()" [disabled]="arrayForSort.length <= 1">{{'Home.SortButton' | translate}}</button>
+    <button mat-button>{{'Home.RESET' | translate}}</button>
   </mat-card-actions>
 </mat-card>

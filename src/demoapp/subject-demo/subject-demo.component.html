@@ -1,6 +1,6 @@
 <mat-tab-group>
   <mat-tab>
-    <ng-template md-tab-label>
+    <ng-template mat-tab-label>
       Chinese Chess <em>General Problem</em>
     </ng-template>
     <mat-card>
@@ -28,10 +28,10 @@
         <!-- New term -->
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="Coef" [(ngModel)]="polAddCoef" name="polAddCoef">
+            <input matInput type="number" placeholder="Coef" [(ngModel)]="polAddCoef" name="polAddCoef">
           </mat-input-container>
           <mat-input-container>
-            <input mdInput type="number" placeholder="Exp" [(ngModel)]="polAddExp" name="polAddExp">
+            <input matInput type="number" placeholder="Exp" [(ngModel)]="polAddExp" name="polAddExp">
           </mat-input-container>
           <button md-raised-button (click)="OnPolynomialNewTerm()">NEW TERM</button>
         </div>
@@ -39,34 +39,34 @@
         <!-- Eval -->
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="Value of Variable" [(ngModel)]="polEval" name="polEval">
+            <input matInput type="number" placeholder="Value of Variable" [(ngModel)]="polEval" name="polEval">
           </mat-input-container>
-          <button md-raised-button (click)="OnPolynomialEval()">EVAL</button>
+          <button mat-raised-button (click)="OnPolynomialEval()">EVAL</button>
         </div>
 
         <!-- Add -->
         <div class="demo-full-width">
           <span [innerHtml]='polNewForAdd'></span>
-          <button md-raised-button (click)="OnPolynomialNewForAddRandom()">NEW RANDOM</button>
-          <button md-raised-button (click)="OnPolynomialAdd()" [disabled]="polNewForAdd === null || polNewForAdd.length <= 0">ADD</button>
+          <button mat-raised-button (click)="OnPolynomialNewForAddRandom()">NEW RANDOM</button>
+          <button mat-raised-button (click)="OnPolynomialAdd()" [disabled]="polNewForAdd === null || polNewForAdd.length <= 0">ADD</button>
         </div>
 
         <!-- Multiply -->
         <div class="demo-full-width">
           <span [innerHtml]='polNewForMultiply'></span>
-          <button md-raised-button (click)="OnPolynomialNewForMultiplyRandom()">NEW RANDOM</button>
-          <button md-raised-button (click)="OnPolynomialMultiply()" [disabled]="polNewForMultiply === null || polNewForMultiply.length <= 0">MULTIPLY</button>
+          <button mat-raised-button (click)="OnPolynomialNewForMultiplyRandom()">NEW RANDOM</button>
+          <button mat-raised-button (click)="OnPolynomialMultiply()" [disabled]="polNewForMultiply === null || polNewForMultiply.length <= 0">MULTIPLY</button>
         </div>
       </mat-card-content>
       
       <mat-card-actions>
-        <button md-button (click)="OnPolynomialRandomGenerate()" [disabled]="_polynomial === null">INITIALIZE WITH RANDOMIZE</button>
-        <button md-button (click)="OnPolynomialRetset()" [disabled]="_polynomial !== null">RESET</button>
+        <button mat-button (click)="OnPolynomialRandomGenerate()" [disabled]="_polynomial === null">INITIALIZE WITH RANDOMIZE</button>
+        <button mat-button (click)="OnPolynomialRetset()" [disabled]="_polynomial !== null">RESET</button>
       </mat-card-actions>
     </mat-card>
   </mat-tab>
   <mat-tab>
-    <ng-template md-tab-label>
+    <ng-template mat-tab-label>
       Pan Cake Sorting
     </ng-template>
     <mat-card>

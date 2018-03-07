@@ -1,6 +1,6 @@
 <mat-tab-group>
   <mat-tab>
-    <ng-template md-tab-label>
+    <ng-template mat-tab-label>
       {{'DataStructure.SequenceList' | translate}}
     </ng-template>
     <mat-card>
@@ -8,22 +8,22 @@
       <mat-card-content>
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="New item to add" [(ngModel)]="SeqListNumberToAdd" name="seqlistnum2add">
+            <input matInput type="number" placeholder="New item to add" [(ngModel)]="SeqListNumberToAdd" name="seqlistnum2add">
             <mat-hint>Please type a new number here</mat-hint>
           </mat-input-container>
-          <button md-raised-button (click)="onSeqListAppend()">APPEND TO LIST</button>
+          <button mat-raised-button (click)="onSeqListAppend()">APPEND TO LIST</button>
         </div>
 
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="Position to insert" [(ngModel)]="SeqListPositionToInsert" name="seqlistpos2insert">
+            <input matInput type="number" placeholder="Position to insert" [(ngModel)]="SeqListPositionToInsert" name="seqlistpos2insert">
             <mat-hint>Please choose a position here</mat-hint>
           </mat-input-container>
           <mat-input-container>
-            <input mdInput type="number" placeholder="New item to insert" [(ngModel)]="SeqListNumberToInsert" name="seqlistnum2insert">
+            <input matInput type="number" placeholder="New item to insert" [(ngModel)]="SeqListNumberToInsert" name="seqlistnum2insert">
             <mat-hint>Please type a new number here</mat-hint>
           </mat-input-container>
-          <button md-raised-button (click)="onSeqListInsert()">INSERT INTO LIST</button>
+          <button mat-raised-button (click)="onSeqListInsert()">INSERT INTO LIST</button>
         </div>
         
         <hr />
@@ -52,14 +52,14 @@
         </mat-table>
       </mat-card-content>
       <mat-card-actions>
-        <button md-button [disabled]="sqlistIsInit" (click)="onSeqListInit()">INITIALIZE</button>
-        <button md-button (click)="onSeqListPrint()">PRINT</button>
-        <button md-button (click)="onSeqListReset()">RESET</button>
+        <button mat-button [disabled]="sqlistIsInit" (click)="onSeqListInit()">INITIALIZE</button>
+        <button mat-button (click)="onSeqListPrint()">PRINT</button>
+        <button mat-button (click)="onSeqListReset()">RESET</button>
       </mat-card-actions>
     </mat-card>
   </mat-tab>
   <mat-tab>
-    <ng-template md-tab-label>
+    <ng-template mat-tab-label>
       <mat-icon>thumb_up</mat-icon>{{'DataStructure.LinkList' | translate}}
     </ng-template>
     <mat-card>
@@ -67,22 +67,22 @@
       <mat-card-content>
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToAdd" name="linklistnum2add">
+            <input matInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToAdd" name="linklistnum2add">
             <mat-hint>Please type a new number here</mat-hint>
           </mat-input-container>
-          <button md-raised-button (click)="onLinkListAppend()">APPEND TO LIST</button>
+          <button mat-raised-button (click)="onLinkListAppend()">APPEND TO LIST</button>
         </div>
 
         <div class="demo-full-width">
           <mat-input-container>
-            <input mdInput type="number" placeholder="Position to insert" [(ngModel)]="LinkListPositionToInsert" name="linklistpos2insert">
+            <input matInput type="number" placeholder="Position to insert" [(ngModel)]="LinkListPositionToInsert" name="linklistpos2insert">
             <mat-hint>Please choose a position here</mat-hint>
           </mat-input-container>
           <mat-input-container>
-            <input mdInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToInsert" name="linklistnum2insert">
+            <input matInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToInsert" name="linklistnum2insert">
             <mat-hint>Please type a new number here</mat-hint>
           </mat-input-container>
-          <button md-raised-button (click)="onLinkListInsert()">INSERT INTO LIST</button>
+          <button mat-raised-button (click)="onLinkListInsert()">INSERT INTO LIST</button>
         </div>
         
         <hr />
@@ -111,9 +111,9 @@
         </mat-table>
       </mat-card-content>
       <mat-card-actions>
-        <button md-button [disabled]="linklistIsInit" (click)="onLinkListInit()">INITIALIZE</button>
-        <button md-button (click)="onLinkListPrint()">PRINT</button>
-        <button md-button (click)="onLinkListReset()">RESET</button>
+        <button mat-button [disabled]="linklistIsInit" (click)="onLinkListInit()">INITIALIZE</button>
+        <button mat-button (click)="onLinkListPrint()">PRINT</button>
+        <button mat-button (click)="onLinkListReset()">RESET</button>
       </mat-card-actions>
     </mat-card>
   </mat-tab>

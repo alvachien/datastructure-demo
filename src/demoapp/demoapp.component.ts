@@ -1,7 +1,5 @@
-import { Component, ViewEncapsulation, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
-const changeDetectionKey = 'mdDemoChangeDetection';
 
 @Component({
   selector: 'home',
@@ -13,7 +11,6 @@ export class Home { }
   moduleId: module.id,
   selector: 'demo-app-on-push',
   template: '<ng-content></ng-content>',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class DemoAppOnPush { }
@@ -47,16 +44,10 @@ export class DemoAppComponent {
 
   constructor(private _element: ElementRef,
     private _translate: TranslateService) {
-      // Setup the translate
-      this.selectedLanguage = 'en';
-      this._translate.setDefaultLang('en');
-      this._translate.use(this.selectedLanguage);
-
-      try {
-        this.changeDetectionStrategy = window.localStorage.getItem(changeDetectionKey) || 'Default';
-      } catch (error) {
-        console.error(error);
-      }
+    // Setup the translate
+    this.selectedLanguage = 'en';
+    this._translate.setDefaultLang('en');
+    this._translate.use(this.selectedLanguage);
   }
 
   toggleFullscreen() {
@@ -69,16 +60,6 @@ export class DemoAppComponent {
       elem.mozRequestFullScreen();
     } else if (elem.msRequestFullScreen) {
       elem.msRequestFullScreen();
-    }
-  }
-
-  toggleChangeDetection() {
-    try {
-      this.changeDetectionStrategy = this.changeDetectionStrategy === 'Default' ? 'OnPush' : 'Default';
-      window.localStorage.setItem(changeDetectionKey, this.changeDetectionStrategy);
-      window.location.reload();
-    } catch (error) {
-      console.error(error);
     }
   }
 

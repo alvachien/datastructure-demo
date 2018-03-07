@@ -3,24 +3,24 @@
   <mat-card-content>
     <form>
       <mat-input-container class="demo-full-width">
-        <input mdInput placeholder="Source String" [(ngModel)]="SourceString" name="sourcestr" required>
+        <input matInput placeholder="Source String" [(ngModel)]="SourceString" name="sourcestr" required>
         <mat-error>This field is required</mat-error>
         <mat-hint>Please type source string here</mat-hint>
       </mat-input-container>
 
       <mat-input-container class="demo-full-width">
-        <input mdInput placeholder="Search String" [(ngModel)]="SearchString" name="searchstr" required>
+        <input matInput placeholder="Search String" [(ngModel)]="SearchString" name="searchstr" required>
         <mat-error>This field is required</mat-error>
         <mat-hint>Please type string for searching here</mat-hint>
       </mat-input-container>
 
       <mat-input-container class="demo-full-width">
-        <textarea mdInput placeholder="Calculation Steps">{{DetailSteps}}</textarea>
+        <textarea matInput placeholder="Calculation Steps">{{DetailSteps}}</textarea>
       </mat-input-container>
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button md-button (click)="onCalc()">GO</button>
-    <button md-button>RESET</button>
+    <button mat-button (click)="onCalc()">GO</button>
+    <button mat-button>RESET</button>
   </mat-card-actions>
 </mat-card>
