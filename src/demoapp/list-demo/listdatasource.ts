@@ -1,9 +1,6 @@
 import { DataSource } from '@angular/cdk/table';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
+import { Observable, BehaviorSubject, merge } from 'rxjs';
+import { startWith, map } from 'rxjs/operators';
 import { IListOperateData, ListOperateData } from './listoperatedata';
 
 /** An database that the data source uses to retrieve data for the table. */
