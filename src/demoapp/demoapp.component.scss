@@ -42,6 +42,10 @@ body {
   }
 }
 
+.flex-spacer {
+  flex-grow: 1;
+}
+
 // stretch to screen size in fullscreen mode
 .demo-content {
   width: 100%;

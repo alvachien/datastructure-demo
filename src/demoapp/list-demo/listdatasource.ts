@@ -5,19 +5,19 @@ import { IListOperateData, ListOperateData } from './listoperatedata';
 
 /** An database that the data source uses to retrieve data for the table. */
 export class ListOperateDatabase {
-    /** Stream that emits whenever the data has been modified. */
-    dataChange: BehaviorSubject<IListOperateData[]> = new BehaviorSubject<IListOperateData[]>([]);
-    get data(): IListOperateData[] { return this.dataChange.value; }
+  /** Stream that emits whenever the data has been modified. */
+  dataChange: BehaviorSubject<IListOperateData[]> = new BehaviorSubject<IListOperateData[]>([]);
+  get data(): IListOperateData[] { return this.dataChange.value; }
 
-    constructor() {
-    }
+  constructor() {
+  }
 
-    /** Adds a new operate. */
-    addOperate(od: IListOperateData) {
-        const copiedData = this.data.slice();
-        copiedData.push(od);
-        this.dataChange.next(copiedData);
-    }
+  /** Adds a new operate. */
+  addOperate(od: IListOperateData) {
+    const copiedData = this.data.slice();
+    copiedData.push(od);
+    this.dataChange.next(copiedData);
+  }
 }
 
 /**
@@ -28,14 +28,14 @@ export class ListOperateDatabase {
  * should be rendered.
  */
 export class ListOperateDataSource extends DataSource<any> {
-    constructor(private _listopDatabase: ListOperateDatabase) {
-        super();
-    }
+  constructor(private _listopDatabase: ListOperateDatabase) {
+    super();
+  }
 
-    /** Connect function called by the table to retrieve one stream containing the data to render. */
-    connect(): Observable<IListOperateData[]> {
-        return this._listopDatabase.dataChange;
-    }
+  /** Connect function called by the table to retrieve one stream containing the data to render. */
+  connect(): Observable<IListOperateData[]> {
+    return this._listopDatabase.dataChange;
+  }
 
-    disconnect() { }
+  disconnect() { }
 }

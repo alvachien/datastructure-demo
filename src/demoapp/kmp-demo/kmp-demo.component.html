@@ -2,21 +2,21 @@
   <mat-toolbar color="primary">KMP Demo</mat-toolbar>
   <mat-card-content>
     <form>
-      <mat-input-container class="demo-full-width">
+      <mat-form-field class="demo-full-width">
         <input matInput placeholder="Source String" [(ngModel)]="SourceString" name="sourcestr" required>
         <mat-error>This field is required</mat-error>
         <mat-hint>Please type source string here</mat-hint>
-      </mat-input-container>
+      </mat-form-field>
 
-      <mat-input-container class="demo-full-width">
+      <mat-form-field class="demo-full-width">
         <input matInput placeholder="Search String" [(ngModel)]="SearchString" name="searchstr" required>
         <mat-error>This field is required</mat-error>
         <mat-hint>Please type string for searching here</mat-hint>
-      </mat-input-container>
+      </mat-form-field>
 
-      <mat-input-container class="demo-full-width">
+      <mat-form-field class="demo-full-width">
         <textarea matInput placeholder="Calculation Steps">{{DetailSteps}}</textarea>
-      </mat-input-container>
+      </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>

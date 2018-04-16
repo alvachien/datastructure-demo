@@ -27,20 +27,20 @@
         
         <!-- New term -->
         <div class="demo-full-width">
-          <mat-input-container>
+          <mat-form-field>
             <input matInput type="number" placeholder="Coef" [(ngModel)]="polAddCoef" name="polAddCoef">
-          </mat-input-container>
-          <mat-input-container>
+          </mat-form-field>
+          <mat-form-field>
             <input matInput type="number" placeholder="Exp" [(ngModel)]="polAddExp" name="polAddExp">
-          </mat-input-container>
+          </mat-form-field>
           <button md-raised-button (click)="OnPolynomialNewTerm()">NEW TERM</button>
         </div>
 
         <!-- Eval -->
         <div class="demo-full-width">
-          <mat-input-container>
+          <mat-form-field>
             <input matInput type="number" placeholder="Value of Variable" [(ngModel)]="polEval" name="polEval">
-          </mat-input-container>
+          </mat-form-field>
           <button mat-raised-button (click)="OnPolynomialEval()">EVAL</button>
         </div>
 
