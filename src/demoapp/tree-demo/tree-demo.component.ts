@@ -2,6 +2,8 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
+import { BinarySearchTree } from 'actslib';
+import { Binary } from 'selenium-webdriver/firefox';
 
 /**
  * File node data with nested structure.
@@ -121,7 +123,10 @@ export class FileDatabase {
 })
 export class TreeDemoComponent implements OnInit {
 
+  private _objTree: BinarySearchTree;
+
   ngOnInit() {
+    this._objTree = new BinarySearchTree();
   }
 
   treeControl: FlatTreeControl<FileFlatNode>;
