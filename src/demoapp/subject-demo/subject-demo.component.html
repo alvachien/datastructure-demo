@@ -21,12 +21,12 @@
     <mat-card>
       <mat-toolbar>{{'Subject.Polynomial' | translate}}</mat-toolbar>
       <mat-card-content>
-        <div class="demo-full-width" *ngFor="let pds of PolynomialDisplayStrings">
+        <div class="control-full-width" *ngFor="let pds of PolynomialDisplayStrings">
           <span [innerHtml]='pds'></span>
         </div>
         
         <!-- New term -->
-        <div class="demo-full-width">
+        <div class="control-full-width">
           <mat-form-field>
             <input matInput type="number" placeholder="Coef" [(ngModel)]="polAddCoef" name="polAddCoef">
           </mat-form-field>
@@ -37,7 +37,7 @@
         </div>
 
         <!-- Eval -->
-        <div class="demo-full-width">
+        <div class="control-full-width">
           <mat-form-field>
             <input matInput type="number" placeholder="Value of Variable" [(ngModel)]="polEval" name="polEval">
           </mat-form-field>
@@ -45,14 +45,14 @@
         </div>
 
         <!-- Add -->
-        <div class="demo-full-width">
+        <div class="control-full-width">
           <span [innerHtml]='polNewForAdd'></span>
           <button mat-raised-button (click)="OnPolynomialNewForAddRandom()">NEW RANDOM</button>
           <button mat-raised-button (click)="OnPolynomialAdd()" [disabled]="polNewForAdd === null || polNewForAdd.length <= 0">ADD</button>
         </div>
 
         <!-- Multiply -->
-        <div class="demo-full-width">
+        <div class="control-full-width">
           <span [innerHtml]='polNewForMultiply'></span>
           <button mat-raised-button (click)="OnPolynomialNewForMultiplyRandom()">NEW RANDOM</button>
           <button mat-raised-button (click)="OnPolynomialMultiply()" [disabled]="polNewForMultiply === null || polNewForMultiply.length <= 0">MULTIPLY</button>

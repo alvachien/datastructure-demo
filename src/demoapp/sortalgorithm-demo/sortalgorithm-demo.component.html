@@ -1,10 +1,10 @@
-<mat-card class="demo-kmp demo-basic">
+<mat-card class="control-card">
   <mat-toolbar color="primary">{{'Algorithm.SortingAlgorithm' | translate}} Demo</mat-toolbar>
   <mat-card-content>
-    <mat-form-field class="demo-full-width">
+    <mat-form-field class="control-full-width">
       <input matInput type="number" required placeholder="Maximum numbers" [(ngModel)]="maxnumber" name="maxnbr">
     </mat-form-field>
-    <mat-form-field class="demo-full-width">
+    <mat-form-field class="control-full-width">
       <textarea matInput placeholder="Before Sort" readonly [value]="BeforeSort" name="bfsrt" rows="10"></textarea>
     </mat-form-field>
     <mat-select placeholder="{{'Algorithm.SortingAlgorithm' | translate}}" [(ngModel)]="currentAlgor" required #algControl="ngModel">
@@ -13,11 +13,11 @@
         {{ alg.viewValue }}
       </mat-option>
     </mat-select>
-    <mat-form-field class="demo-full-width">
+    <mat-form-field class="control-full-width">
       <input matInput type="number" readonly placeholder="{{'Home.TimeSpent' | translate}}" [value]="tmeSpent" name="tmSpent">
     </mat-form-field>
     <p>
-      <mat-form-field class="demo-full-width">
+      <mat-form-field class="control-full-width">
         <textarea matInput placeholder="Detail" readonly rows="10">{{AfterSort}}</textarea>
       </mat-form-field>
     </p>

@@ -18,4 +18,3 @@ export const DemoAppRoutes: Routes = [
   { path: 'graph-demo', component: GraphDemoComponent },
   { path: 'subject-demo', component: SubjectDemoComponent },
 ];
-

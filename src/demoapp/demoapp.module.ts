@@ -17,6 +17,7 @@ import {
   MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule,
   MatTooltipModule, MatFormFieldModule, MatExpansionModule, MatStepperModule, MatTreeModule
 } from '@angular/material';
+
 import { KmpDemoComponent } from './kmp-demo/kmp-demo.component';
 import { BinarytreeDemoComponent } from './binarytree-demo/binarytree-demo.component';
 import { SortalgorithmDemoComponent } from './sortalgorithm-demo/sortalgorithm-demo.component';
