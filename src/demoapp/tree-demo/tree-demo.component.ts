@@ -2,7 +2,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
-// import { BinarySearchTree } from 'actslib';
+import { BinarySearchTree } from 'actslib';
 import { Binary } from 'selenium-webdriver/firefox';
 
 /**
@@ -80,7 +80,7 @@ export class FileDatabase {
     this.initialize();
   }
 
-  initialize() {
+  initialize(): void {
     // Parse the string to json object.
     const dataObject = JSON.parse(TREE_DATA);
 
@@ -123,37 +123,39 @@ export class FileDatabase {
 })
 export class TreeDemoComponent implements OnInit {
 
-  // private _objTree: BinarySearchTree;
+  private _objTree: BinarySearchTree<any>;
 
-  ngOnInit() {
-    // this._objTree = new BinarySearchTree();
-  }
+  treeControl: FlatTreeControl<FileFlatNode>;
 
-  // treeControl: FlatTreeControl<FileFlatNode>;
+  treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
 
-  // treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
-
-  // dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+  dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
 
   constructor(database: FileDatabase) {
-    // this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
-    //   this._isExpandable, this._getChildren);
-    // this.treeControl = new FlatTreeControl<FileFlatNode>(this._getLevel, this._isExpandable);
-    // this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+    this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
+      this._isExpandable, this._getChildren);
+    this.treeControl = new FlatTreeControl<FileFlatNode>(this._getLevel, this._isExpandable);
+    this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-    // database.dataChange.subscribe(data => {
-    //   this.dataSource.data = data;
-    // });
+    database.dataChange.subscribe((data: any) => {
+      this.dataSource.data = data;
+    });
+  }
+
+  ngOnInit(): void {
+    this._objTree = new BinarySearchTree<any>();
   }
 
   transformer = (node: FileNode, level: number) => {
-    let flatNode = new FileFlatNode();
+    let flatNode: FileFlatNode = new FileFlatNode();
     flatNode.filename = node.filename;
     flatNode.type = node.type;
     flatNode.level = level;
     flatNode.expandable = !!node.children;
     return flatNode;
   }
+
+  hasChild = (_: number, _nodeData: FileFlatNode) => { return _nodeData.expandable; };
 
   private _getLevel = (node: FileFlatNode) => { return node.level; };
 
@@ -162,6 +164,4 @@ export class TreeDemoComponent implements OnInit {
   private _getChildren = (node: FileNode): Observable<FileNode[]> => {
     return observableOf(node.children);
   }
-
-  hasChild = (_: number, _nodeData: FileFlatNode) => { return _nodeData.expandable; };
 }

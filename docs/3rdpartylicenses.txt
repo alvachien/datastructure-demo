@@ -392,6 +392,8 @@ MIT
 
 @angular/material/tabs
 
+@angular/material/tree
+
 core-js
 MIT
 Copyright (c) 2014-2018 Denis Pushkarev
