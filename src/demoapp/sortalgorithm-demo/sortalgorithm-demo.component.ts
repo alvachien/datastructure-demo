@@ -5,7 +5,7 @@ import { MatSelectChange } from '@angular/material';
 @Component({
   selector: 'app-sortalgorithm-demo',
   templateUrl: './sortalgorithm-demo.component.html',
-  styleUrls: ['./sortalgorithm-demo.component.scss']
+  styleUrls: ['./sortalgorithm-demo.component.scss'],
 })
 export class SortalgorithmDemoComponent implements OnInit {
 

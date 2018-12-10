@@ -2,7 +2,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
-import { BinarySearchTree } from 'actslib';
+// import { BinarySearchTree } from 'actslib';
 import { Binary } from 'selenium-webdriver/firefox';
 
 /**
@@ -119,31 +119,31 @@ export class FileDatabase {
   selector: 'demoapp-tree-demo',
   templateUrl: './tree-demo.component.html',
   styleUrls: ['./tree-demo.component.scss'],
-  providers: [FileDatabase]
+  providers: [FileDatabase],
 })
 export class TreeDemoComponent implements OnInit {
 
-  private _objTree: BinarySearchTree;
+  // private _objTree: BinarySearchTree;
 
   ngOnInit() {
-    this._objTree = new BinarySearchTree();
+    // this._objTree = new BinarySearchTree();
   }
 
-  treeControl: FlatTreeControl<FileFlatNode>;
+  // treeControl: FlatTreeControl<FileFlatNode>;
 
-  treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
+  // treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
 
-  dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+  // dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
 
   constructor(database: FileDatabase) {
-    this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
-      this._isExpandable, this._getChildren);
-    this.treeControl = new FlatTreeControl<FileFlatNode>(this._getLevel, this._isExpandable);
-    this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+    // this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
+    //   this._isExpandable, this._getChildren);
+    // this.treeControl = new FlatTreeControl<FileFlatNode>(this._getLevel, this._isExpandable);
+    // this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-    database.dataChange.subscribe(data => {
-      this.dataSource.data = data;
-    });
+    // database.dataChange.subscribe(data => {
+    //   this.dataSource.data = data;
+    // });
   }
 
   transformer = (node: FileNode, level: number) => {

@@ -1,14 +1,10 @@
-import {Component, ViewEncapsulation, ChangeDetectionStrategy, NgModule} from '@angular/core';
-import {StyleManager} from '../style-manager/style-manager';
-import {ThemeStorage, DocsSiteTheme} from './theme-storage';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, NgModule, } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StyleManager } from '../style-manager/style-manager';
+import { ThemeStorage, DemoAppTheme } from './theme-storage';
 import {
-  MatButtonModule, 
-  MatGridListModule, 
-  MatIconModule, 
-  MatMenuModule,
-  MatTooltipModule
+  MatButtonModule, MatGridListModule, MatIconModule, MatMenuModule, MatTooltipModule,
 } from '@angular/material';
-import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'theme-picker',
@@ -51,15 +47,14 @@ export class ThemePicker {
 
   constructor(
     public styleManager: StyleManager,
-    private _themeStorage: ThemeStorage
-  ) {
+    private _themeStorage: ThemeStorage) {
     const currentTheme = this._themeStorage.getStoredTheme();
     if (currentTheme) {
       this.installTheme(currentTheme);
     }
   }
 
-  installTheme(theme: DocsSiteTheme) {
+  installTheme(theme: DemoAppTheme): void {
     this.currentTheme = this._getCurrentThemeFromHref(theme.href);
 
     if (theme.isDefault) {
@@ -73,7 +68,7 @@ export class ThemePicker {
     }
   }
 
-  private _getCurrentThemeFromHref(href: string): DocsSiteTheme {
+  private _getCurrentThemeFromHref(href: string): DemoAppTheme {
     return this.themes.find(theme => theme.href === href);
   }
 }
@@ -85,7 +80,7 @@ export class ThemePicker {
     MatMenuModule,
     MatGridListModule,
     MatTooltipModule,
-    CommonModule
+    CommonModule,
   ],
   exports: [ThemePicker],
   declarations: [ThemePicker],

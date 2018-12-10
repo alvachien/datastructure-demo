@@ -10,7 +10,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -109,7 +109,7 @@
       }
     },
     "datastructure-demo-e2e": {
-      "root": "",
+      "root": "/e2e/",
       "projectType": "application",
       "cli": {},
       "schematics": {},
