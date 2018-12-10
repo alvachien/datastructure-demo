@@ -109,7 +109,7 @@
       }
     },
     "datastructure-demo-e2e": {
-      "root": "/e2e/",
+      "root": "e2e/",
       "projectType": "application",
       "cli": {},
       "schematics": {},

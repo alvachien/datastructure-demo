@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'home',
-  templateUrl: './demoapp.home.html'
+  templateUrl: './demoapp.home.html',
 })
 export class Home { }
 
@@ -37,9 +37,9 @@ export class DemoAppComponent {
   navUIItems = [
     { name: 'Subject Demo', route: 'subject-demo' },
   ];
-  availableLanguages = [
+  availableLanguages: any[] = [
     { DisplayName: 'Languages.en', Value: 'en' },
-    { DisplayName: 'Languages.zh', Value: 'zh' }
+    { DisplayName: 'Languages.zh', Value: 'zh' },
   ];
 
   constructor(private _element: ElementRef,
@@ -50,8 +50,8 @@ export class DemoAppComponent {
     this._translate.use(this.selectedLanguage);
   }
 
-  toggleFullscreen() {
-    const elem = this._element.nativeElement.querySelector('.demo-content');
+  toggleFullscreen(): void {
+    const elem: any = this._element.nativeElement.querySelector('.demo-content');
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.webkitRequestFullScreen) {
@@ -63,7 +63,7 @@ export class DemoAppComponent {
     }
   }
 
-  onLanguageChange() {
+  onLanguageChange(): void {
     if (this._translate.currentLang !== this.selectedLanguage) {
       this._translate.use(this.selectedLanguage);
     }
