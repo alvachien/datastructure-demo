@@ -1,62 +1,25 @@
 {
   "name": "datastructure-demo",
-  "version": "0.1.1",
-  "homepage": "https://github.com/alvachien/datastructure-demo",
-  "bugs": "https://github.com/alvachien/datastructure-demo/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alvachien/datastructure-demo.git"
-  },
-  "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@angular/animations": "^7.0.3",
-    "@angular/cdk": "^7.0.3",
-    "@angular/common": "^7.0.3",
-    "@angular/compiler": "^7.0.3",
-    "@angular/core": "^7.0.3",
-    "@angular/flex-layout": "^7.0.0-beta.19",
-    "@angular/forms": "^7.0.3",
-    "@angular/material": "^7.0.3",
-    "@angular/material-moment-adapter": "^7.0.3",
-    "@angular/platform-browser": "^7.0.3",
-    "@angular/platform-browser-dynamic": "^7.0.3",
-    "@angular/router": "^7.0.3",
-    "@ngx-translate/core": "^11.0.0",
-    "@ngx-translate/http-loader": "^4.0.0",
-    "@swimlane/ngx-charts": "^10.0.0",
-    "actslib": "^0.4.3",
-    "core-js": "^2.5.7",
-    "hammerjs": "^2.0.8",
-    "moment": "^2.22.2",
-    "rxjs": "^6.3.3",
-    "zone.js": "^0.8.26"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
   },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.5",
-    "@angular/cli": "^7.0.5",
-    "@angular/compiler-cli": "^7.0.3",
-    "@types/jasmine": "^2.8.11",
-    "@types/node": "^10.12.5",
-    "codelyzer": "^4.5.0",
-    "jasmine-core": "^3.3.0",
-    "jasmine-spec-reporter": "^4.2.1",
-    "karma": "^3.1.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-cli": "^1.0.1",
-    "karma-coverage-istanbul-reporter": "^2.0.4",
-    "karma-jasmine": "^1.1.2",
-    "karma-jasmine-html-reporter": "^1.4.0",
-    "protractor": "^5.4.1",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
