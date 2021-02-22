@@ -1,0 +1,120 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      {{'DataStructure.SequenceList' | transloco}}
+    </ng-template>
+    <mat-card>
+      <mat-toolbar color="primary">{{'DataStructure.SequenceList' | transloco}}</mat-toolbar>
+      <mat-card-content>
+        <div class="control-full-width">
+          <mat-form-field>
+            <input matInput type="number" placeholder="New item to add" [(ngModel)]="SeqListNumberToAdd" name="seqlistnum2add">
+            <mat-hint>Please type a new number here</mat-hint>
+          </mat-form-field>
+          <button mat-raised-button (click)="onSeqListAppend()">APPEND TO LIST</button>
+        </div>
+
+        <div class="control-full-width">
+          <mat-form-field>
+            <input matInput type="number" placeholder="Position to insert" [(ngModel)]="SeqListPositionToInsert" name="seqlistpos2insert">
+            <mat-hint>Please choose a position here</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" placeholder="New item to insert" [(ngModel)]="SeqListNumberToInsert" name="seqlistnum2insert">
+            <mat-hint>Please type a new number here</mat-hint>
+          </mat-form-field>
+          <button mat-raised-button (click)="onSeqListInsert()">INSERT INTO LIST</button>
+        </div>
+        
+        <hr />
+
+        <mat-table #table [dataSource]="sqlistDataSource">
+          <!-- ID Column -->
+          <ng-container cdkColumnDef="ID">
+            <mat-header-cell *cdkHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.ID}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container cdkColumnDef="Name">
+            <mat-header-cell *cdkHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.Name}} </mat-cell>
+          </ng-container>
+
+          <!-- Detail Column -->
+          <ng-container cdkColumnDef="Detail">
+            <mat-header-cell *cdkHeaderCellDef> Detail </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.Detail}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [disabled]="sqlistIsInit" (click)="onSeqListInit()">INITIALIZE</button>
+        <button mat-button (click)="onSeqListPrint()">PRINT</button>
+        <button mat-button (click)="onSeqListReset()">RESET</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>thumb_up</mat-icon>{{'DataStructure.LinkList' | transloco}}
+    </ng-template>
+    <mat-card>
+      <mat-toolbar>{{'DataStructure.LinkList' | transloco}}</mat-toolbar>
+      <mat-card-content>
+        <div class="control-full-width">
+          <mat-form-field>
+            <input matInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToAdd" name="linklistnum2add">
+            <mat-hint>Please type a new number here</mat-hint>
+          </mat-form-field>
+          <button mat-raised-button (click)="onLinkListAppend()">APPEND TO LIST</button>
+        </div>
+
+        <div class="control-full-width">
+          <mat-form-field>
+            <input matInput type="number" placeholder="Position to insert" [(ngModel)]="LinkListPositionToInsert" name="linklistpos2insert">
+            <mat-hint>Please choose a position here</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" placeholder="New number" [(ngModel)]="LinkListNumberToInsert" name="linklistnum2insert">
+            <mat-hint>Please type a new number here</mat-hint>
+          </mat-form-field>
+          <button mat-raised-button (click)="onLinkListInsert()">INSERT INTO LIST</button>
+        </div>
+        
+        <hr />
+
+        <mat-table #table [dataSource]="linklistDataSource">
+          <!-- ID Column -->
+          <ng-container cdkColumnDef="ID">
+            <mat-header-cell *cdkHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.ID}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container cdkColumnDef="Name">
+            <mat-header-cell *cdkHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.Name}} </mat-cell>
+          </ng-container>
+
+          <!-- Detail Column -->
+          <ng-container cdkColumnDef="Detail">
+            <mat-header-cell *cdkHeaderCellDef> Detail </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.Detail}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [disabled]="linklistIsInit" (click)="onLinkListInit()">INITIALIZE</button>
+        <button mat-button (click)="onLinkListPrint()">PRINT</button>
+        <button mat-button (click)="onLinkListReset()">RESET</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
