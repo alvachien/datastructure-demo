@@ -1,13 +1,13 @@
-<mat-sidenav-container class="demo-root" fullscreen>
+<!-- <mat-sidenav-container class="demo-root" fullscreen>
   <mat-sidenav #start>
     <mat-nav-list>
-      <a *ngFor="let navItem of navItems" mat-list-item (click)="start.close()" [routerLink]="[navItem.route]">
+      <a mat-list-item *ngFor="let navItem of navItems" (click)="start.close()" [routerLink]="[navItem.route]">
         {{navItem.name}}
       </a>
 
       <hr>
 
-      <a *ngFor="let navItem of navUIItems" mat-list-item (click)="start.close()" [routerLink]="[navItem.route]">        
+      <a mat-list-item *ngFor="let navItem of navUIItems" (click)="start.close()" [routerLink]="[navItem.route]">        
         {{navItem.name}}
       </a>
     </mat-nav-list>
@@ -42,4 +42,15 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<div>
+  <div class="example-button-row">
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button color="warn">Warn</button>
+    <button mat-button disabled>Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</div>

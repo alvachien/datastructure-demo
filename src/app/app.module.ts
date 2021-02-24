@@ -11,7 +11,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatCardModule } from '@angular/material/card';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule, } from '@angular/material/checkbox';
 import { MatChipsModule, } from '@angular/material/chips';
 import { MatDatepickerModule, } from '@angular/material/datepicker';
@@ -50,31 +50,31 @@ import { SubjectDemoComponent } from './subject-demo/subject-demo.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 
-@NgModule({
-  imports: [
-    CdkTableModule,
-    CdkTreeModule,
-    MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatPaginatorModule,
-    MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
-    MatDialogModule, MatDividerModule, MatGridListModule, MatIconModule, MatInputModule,
-    MatListModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
-    MatRadioModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSortModule,
-    MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule,
-    MatTooltipModule, MatFormFieldModule, MatExpansionModule, MatStepperModule, MatTreeModule,
-  ],
-  exports: [
-    CdkTableModule,
-    CdkTreeModule,
-    MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatPaginatorModule,
-    MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
-    MatDialogModule, MatDividerModule, MatGridListModule, MatIconModule, MatInputModule,
-    MatListModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
-    MatRadioModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSortModule,
-    MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule,
-    MatTooltipModule, MatFormFieldModule, MatExpansionModule, MatStepperModule, MatTreeModule,
-  ],
-})
-export class DSMaterialModule { }
+// @NgModule({
+//   imports: [
+//     CdkTableModule,
+//     CdkTreeModule,
+//     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatPaginatorModule,
+//     MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
+//     MatDialogModule, MatDividerModule, MatGridListModule, MatIconModule, MatInputModule,
+//     MatListModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
+//     MatRadioModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSortModule,
+//     MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule,
+//     MatTooltipModule, MatFormFieldModule, MatExpansionModule, MatStepperModule, MatTreeModule,
+//   ],
+//   exports: [
+//     CdkTableModule,
+//     CdkTreeModule,
+//     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatPaginatorModule,
+//     MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
+//     MatDialogModule, MatDividerModule, MatGridListModule, MatIconModule, MatInputModule,
+//     MatListModule, MatMenuModule, MatProgressBarModule, MatProgressSpinnerModule,
+//     MatRadioModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSortModule,
+//     MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule,
+//     MatTooltipModule, MatFormFieldModule, MatExpansionModule, MatStepperModule, MatTreeModule,
+//   ],
+// })
+// export class DSMaterialModule { }
 
 
 @NgModule({
@@ -96,7 +96,17 @@ export class DSMaterialModule { }
     HttpClientModule,
     TranslocoRootModule,
     BrowserAnimationsModule,
-    DSMaterialModule,
+
+    MatSidenavModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatIconModule,
+    MatSelectModule,
+    MatTableModule,
+    MatTreeModule,
+    MatListModule,
   ],
   bootstrap: [AppComponent]
 })
