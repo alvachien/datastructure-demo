@@ -1,5 +1,6 @@
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, ElementRef, OnDestroy } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-root-home',
@@ -13,9 +14,8 @@ export class HomeComponent {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
-  elementRef: ElementRef;
 
   navItems = [
     { name: 'KMP Demo', route: 'kmp-demo' },
@@ -30,21 +30,27 @@ export class AppComponent implements OnDestroy {
   ];
   selectedLanguage = 'en';
   availableLanguages: any[] = [
-    { DisplayName: 'Languages.en', Value: 'en' },
-    { DisplayName: 'Languages.zh', Value: 'zh' },
+    { displayName: 'Languages.en', value: 'en' },
+    { displayName: 'Languages.zh', value: 'zh' },
   ];
 
-  private _mobileQueryListener: () => void;
+  private mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, elementRef: ElementRef) {
+  constructor(
+    changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    private elementRef: ElementRef,
+    private transSvc: TranslocoService,
+    ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
-    this.elementRef = elementRef;
+    this.mobileQueryListener = () => changeDetectorRef.detectChanges();
   }
 
+  ngOnInit(): void {
+    this.mobileQuery.addEventListener('change', this.mobileQueryListener);
+  }
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeEventListener('change', this.mobileQueryListener);
   }
 
   toggleFullscreen(): void {
@@ -60,8 +66,6 @@ export class AppComponent implements OnDestroy {
     }
   }
   onLanguageChange(): void {
-    // if (this._translate. !== this.selectedLanguage) {
-    //    this._translate.use(this.selectedLanguage);
-    //  }
-  }  
+    this.transSvc.setActiveLang(this.selectedLanguage);
+  }
 }

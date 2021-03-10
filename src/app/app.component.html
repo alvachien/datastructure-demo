@@ -7,8 +7,8 @@
     <div class="flex-spacer"></div> 
     <mat-form-field>
       <mat-select [(ngModel)]="selectedLanguage" (change)="onLanguageChange()" name="lang">
-        <mat-option *ngFor="let lang of availableLanguages" [value]="lang.Value">
-          {{ lang.DisplayName | transloco }}
+        <mat-option *ngFor="let lang of availableLanguages" [value]="lang.value">
+          {{ lang.displayName | transloco }}
         </mat-option>
       </mat-select>
     </mat-form-field>
