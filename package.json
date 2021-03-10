@@ -1,6 +1,6 @@
 {
   "name": "datastructure-demo",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ssl true -o --ssl-key ssl/server.key --ssl-cert ssl/server.crt",
