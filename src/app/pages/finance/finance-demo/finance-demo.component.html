@@ -1,0 +1,83 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Future Value Interest Factor">
+    <div class="mat-elevation-z4">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Period Column -->
+        <ng-container matColumnDef="period">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.period }}</td>
+        </ng-container>
+
+        <!-- Value1 Column -->
+        <ng-container matColumnDef="value1">
+          <th mat-header-cell *matHeaderCellDef>1%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value1 }}</td>
+        </ng-container>
+
+        <!-- Value2 Column -->
+        <ng-container matColumnDef="value2">
+          <th mat-header-cell *matHeaderCellDef>2%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value2 }}</td>
+        </ng-container>
+
+        <!-- Value3 Column -->
+        <ng-container matColumnDef="value3">
+          <th mat-header-cell *matHeaderCellDef>3%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value3 }}</td>
+        </ng-container>
+
+        <!-- Value4 Column -->
+        <ng-container matColumnDef="value4">
+          <th mat-header-cell *matHeaderCellDef>4%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value4 }}</td>
+        </ng-container>
+        
+        <!-- Value5 Column -->
+        <ng-container matColumnDef="value5">
+          <th mat-header-cell *matHeaderCellDef>5%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value5 }}</td>
+        </ng-container>
+
+        <!-- Value6 Column -->
+        <ng-container matColumnDef="value6">
+          <th mat-header-cell *matHeaderCellDef>6%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value6 }}</td>
+        </ng-container>
+
+        <!-- Value7 Column -->
+        <ng-container matColumnDef="value7">
+          <th mat-header-cell *matHeaderCellDef>7%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value7 }}</td>
+        </ng-container>
+
+        <!-- Value8 Column -->
+        <ng-container matColumnDef="value8">
+          <th mat-header-cell *matHeaderCellDef>8%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value8 }}</td>
+        </ng-container>
+
+        <!-- Value9 Column -->
+        <ng-container matColumnDef="value9">
+          <th mat-header-cell *matHeaderCellDef>9%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value9 }}</td>
+        </ng-container>
+
+        <!-- Value10 Column -->
+        <ng-container matColumnDef="value10">
+          <th mat-header-cell *matHeaderCellDef>10%</th>
+          <td mat-cell *matCellDef="let element">{{ element.value10 }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Long tab">
+    <div class="example-large-box mat-elevation-z4">Large content</div>
+  </mat-tab>
+</mat-tab-group>

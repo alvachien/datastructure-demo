@@ -13,7 +13,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 import { HomeComponent } from './app.component';
 import { BinarytreeDemoComponent } from './binarytree-demo/binarytree-demo.component';
-import { GraphDemoComponent } from './graph-demo/graph-demo.component';
 import { KmpDemoComponent } from './kmp-demo/kmp-demo.component';
 import { ListDemoComponent } from './list-demo/list-demo.component';
 import { SortalgorithmDemoComponent } from './sortalgorithm-demo/sortalgorithm-demo.component';
@@ -28,7 +27,6 @@ import { TreeDemoComponent } from './tree-demo/tree-demo.component';
     ListDemoComponent,
     SortalgorithmDemoComponent,
     BinarytreeDemoComponent,
-    GraphDemoComponent,
     SubjectDemoComponent,
     TreeDemoComponent,
   ],

@@ -22,12 +22,13 @@ export class AppComponent implements OnDestroy {
     { name: 'Sorting Algorithm Demo', route: 'sortalg-demo' },
     { name: 'List Demo', route: 'list-demo' },
     { name: 'Tree Demo', route: 'tree-demo' },
-    { name: 'Graph Demo', route: 'graph-demo' },
+    { name: 'Graph Demo', route: 'graph' },
   ];
   navUIItems = [
+    { name: 'Finance Demo', route: 'finance' },
     { name: 'Subject Demo', route: 'subject-demo' },
   ];
-  selectedLanguage: string = 'en';
+  selectedLanguage = 'en';
   availableLanguages: any[] = [
     { DisplayName: 'Languages.en', Value: 'en' },
     { DisplayName: 'Languages.zh', Value: 'zh' },
