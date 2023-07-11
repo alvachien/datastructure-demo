@@ -10,7 +10,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { Polynomial } from 'actslib';
+import { FormulaParser, Polynomial } from 'actslib';
 
 @Component({
   selector: 'demoapp-subject-demo',
@@ -22,7 +22,9 @@ export class SubjectDemoComponent implements OnInit {
    * Polynomial part
    */
   _polynomial: Polynomial | null;
-  PolynomialDisplayStrings: string[];
+  mathExpress: string;
+  mathExpressEval: string;
+  PolynomialDisplayStrings: string[];  
   polAddCoef: number;
   polAddExp: number;
   polEval: number;
@@ -34,6 +36,8 @@ export class SubjectDemoComponent implements OnInit {
   constructor() {    
     this._polynomial = null;
     this.PolynomialDisplayStrings = [];
+    this.mathExpress = '';
+    this.mathExpressEval = '';
     this.polAddCoef = 0;
     this.polAddExp = 0;
     this.polEval = 0;
@@ -46,6 +50,21 @@ export class SubjectDemoComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Math Expression
+   */
+  public OnMathExpressEval(): void {
+    let insForm: FormulaParser = new FormulaParser();
+    
+    try {
+      insForm.init(this.mathExpress);
+      this.mathExpressEval = insForm.evaulate().toString();
+    } catch(err: any) {
+      this.mathExpressEval = err.toString();
+    }
+
+    
+  }
   /**
    * Polynomial part
    */

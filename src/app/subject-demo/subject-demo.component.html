@@ -1,6 +1,25 @@
 <mat-tab-group>
   <mat-tab>
     <ng-template mat-tab-label>
+      Math Expression
+    </ng-template>
+    <mat-card>
+      <mat-toolbar color="accent">Math Expression</mat-toolbar>
+      <mat-card-content>
+        <div class="control-full-width">
+          <mat-form-field>
+            <input matInput type="text" [(ngModel)]="mathExpress">
+          </mat-form-field>
+          <div>{{this.mathExpressEval}}</div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button md-raised-button [disabled]="!mathExpress" (click)="OnMathExpressEval()">Evaluate Expression</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
       Chinese Chess <em>General Problem</em>
     </ng-template>
     <mat-card>
@@ -13,7 +32,7 @@
         <button md-button>RESET</button>
       </mat-card-actions>
     </mat-card>
-  </mat-tab>
+  </mat-tab>  
   <mat-tab>
     <ng-template md-tab-label>
       {{'Subject.Polynomial' | transloco}}
